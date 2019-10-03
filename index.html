@@ -23,9 +23,40 @@
     <div class="col-sm-6">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Special title treatment</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <h5 class="card-title">Order now !</h5>
+                <p class="size-text"></p>
+                <form id="ordersheet">
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Pizza Size</label>
+                    <select class="form-control" id="sizeSelect">
+                        <option>.....</option>
+                        <option value="small" id="small">Small</option>
+                        <option value ="medium" id="medium">Medium</option>
+                        <option value= "large" id="large">Large</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Crust</label>
+                    <select class="form-control" id="crustSelect">
+                        <option>.....</option>
+                        <option value="crispy" id="crispy">Crispy</option>
+                        <option value="stuffed" id="stuffed">Stuffed</option>
+                        <option value="Gluten-free" id="Glutenfree">Gluten-free</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Toppings</label>
+                    <select class="form-control" id="toppingsSelect">
+                        <option>.....</option>
+                        <option value="chicken" id="chicken">Chicken</option>
+                        <option value="hawaiian" id="hawaiian">Hawaiian</option>
+                        <option value="borewores" id="borewores">Borewores</option>
+                        <option value="pepporoni" id="pepporoni">Pepporoni</option>
+                        <option value="vegeterian" id="vegeterian">Vegeterian</option>
+                    </select>
+                </div>
+                <button type="submit" value="submit" class="btn btn-primary" id="submitbutton" onclick="Pizza()">Place Order</a>
+                </form>
             </div>
         </div>
     </div>
@@ -34,7 +65,7 @@
             <div class="card-body">
                 <h5 class="card-title">Special title treatment</h5>
                 <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <a class="btn btn-primary">Go somewhere</a>
             </div>
         </div>
     </div>
@@ -43,9 +74,9 @@
 <div id="footer">
     <div class="card" style="width: 18rem;">
         <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <h5 class="card-title">Reference</h5>
+            <h3 class="card-text">Your total price is </h3>
+            <p></p>
         </div>
     </div>
 </div>
