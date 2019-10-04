@@ -1,100 +1,169 @@
-$('#ordersheet').submit(function(e){
-  e.preventDefault;
-    var totalOrderprice = [];
-    
+// $('#ordersheet').submit(function(e){
+  // e.preventDefault;
+
+  var totalOrderprice = [];
+  function pizza(size, crust, toppings) {
+    this.totalOrderPrice
+    this.size = size;
+    this.crust = crust;
+    this.toppings = toppings;
+    this.calculated= false;
+    this.price = 0;
+  }
     var size = ["small", "medium", "large"];
     var crust = ["crispy", "stuffed", "Gluten-free"];
     var toppings = ["chicken", "hawaiian", "borewores", "pepperoni", "vegeterian"];
-    
-    var size = $("#sizeSelect").val();
-    var crust = $("#crustSelect").val();
-    var toppings = $("Glutenfree").val();
-    
-    var pizza = {
-      size: ["small", "medium", "large"],
-      crust: {
-        crispy: 50,
-        stuffed: 100,
-        glutenFree: 200
-      },
-      toppings: {
-        Chicken: 50,
-        Borewores: 50,
-        Hawaiian: 50,
-        Pepperoni: 50,
-        Vegeterian: 50
-      },
-      price: {
-        small: 100,
-        medium: 200,
-        large: 300
+
+
+pizza.prototype.setSize =  function(size){
+  if(size){
+    this.size = size;
+    this.calculated=false;
+    this.costOfPizza()
+  }
+}
+pizza.prototype.setCrust = function (crust) {
+  if (crust) {
+    this.crust = crust;
+    this.calculated = false;
+    this.costOfPizza()
+  }
+}
+pizza.prototype.setToppings = function (toppings) {
+  if (toppings) {
+    this.toppings = toppings;
+    this.calculated = false;
+    this.costOfPizza()
+  }
+}
+
+  
+
+      pizza.prototype.costOfPizza = function () {
+        if(this.calculated===true){
+          return this.price;
+        }
+        this.price=0;
+
+        if (this.size === "small") {
+          this.price += 100;
+        } else if (this.size === "medium") {
+          this.price += 200;
+        } else if (this.size === "large") {
+          this.price += 300;
+        }
+        if (this.crust === "crispy") {
+          this.price += 50;
+        } else if (this.crust === "stuffed") {
+          this.price += 100;
+        } else if (this.crust === "glutenFree") {
+          this.price += 200;
+        }
+        if (this.toppings === "chicken") {
+          this.price += 50;
+        } else if (this.toppings === "hawaiian") {
+          this.price += 50;
+        } else if (this.toppings === "borewores") {
+          this.price += 50;
+        } else if (this.toppings === "pepperoni") {
+          this.price += 50;
+        } else if (this.toppings === "vegeterian") {
+          this.price += 50;
+        }
+        this.calculated =  true;
+        return this.price;
+      };
+    pizza.prototype.totalOrderprice = function(){
+      var orderTotal = 0;
+      for (var order = 0 ; order < totalOrderprice.length; Pizza ++){
+        orderTotal += totalOrderprice[order];
       }
-    };
-    
-    function Pizza(size, crust, toppings) {
-      this.size = size;
-      this.crust = crust;
-      this.toppings = toppings;
-      this.price = 0;
+      return orderTotal;
     }
-    
-    var placeorder = new Pizza(size, crust, toppings);
-    
-    Pizza.prototype.costOfPizza = function(){
-      if(this.size == "small" && this.crust=="crispy" && this.toppings == "Chicken" || "Hawaiian" || "Pepporoni" || "Borewores" || "Vegeterian"){
-        this.price +=200;
-      }else if (this.size == "small" && this.crust == "stuffed" && this.toppings == "Chicken" || "Hawaiian" || "Pepporoni" || "Borewores" || "Vegeterian"){
-        this.price += 250;
-      }else if (this.size == "small" && this.crust == "glutenFree" && this.toppings == "Chicken" || "Hawaiian"|| "Pepperoni" || "Borewores" ||"Vegeterian"){
-        this.price += 350;
-      }
-      if (this.size == "medium" && this.crust == "crispy" && this.toppings == "Chicken" || "Hawaiian" || "Pepperoni" || "Borewores" || "Vegeterian"){
-        this.price += 300;
-      }else if (this.size == "medium" && this.crust == "stuffed" && this.toppings == "Chicken" || "Hawaiian" || "Pepperoni" || "Borewores" || "Vegeterian") {
-        this.price += 350;
-      }else if (this.size == "medium" && this.crust == "glutenFree" && this.toppings == "Chicken" || "Hawaiian" ||"Pepperoni" ||"Borewores" || "Vegetation"){
-        this.price += 450;
-      }
-      if(this.size == "large" && this.crust == "crispy" && this.toppings == "chicken" || "Hawaiian" || "Borewores" || "Pepperoni"){
-        this.price += 400;
-      }else if (this.size == "large" && this.crust == "stuffed" && this.toppings == "chicken" || "Hawaiian" || "Borewores" || "Pepperoni"){
-        this.price += 450;
-      }else if (this.size == "large" && this.crust == "glutenFree" && this.toppings == "chicken" || "Hawaiian" || "Borewores" || "Pepperoni"){
-        this.price += 550;
-      }
-    };
-    alert(placeorder.costOfPizza())
+
+
+
+var newOrder = new pizza();
+
+$(document).ready(function(){
+  $("input#totalOrderprice").click(function(event){
+    event.preventDefault();
+    var size = $("select#sizeSelect").val();
+    newOrder.setSize(size);
+    var crust = $("select#crustSelect").val();
+    newOrder.setCrust(crust);
+    var toppings = $("select#toppingsSelect").val();
+    newOrder.setToppings(toppings);
+    // var newOrder = new pizza(size, crust, toppings);
+    console.log(newOrder.costOfPizza())
+
+    // newOrder.totalOrderPrice.push(newOrder.price);
+
+    $("#pz").text(size);
+    $("#cr").text(crust);
+    $("#vt").text(toppings);
+    $("#tc").text(newOrder.price);
+
+  })
+})
+
+$(document).ready(function () {
+  $("#delivery").click(function () {
+    alert("Your charges for delivery is ksh200")
+    alert("Thank you for Your Purchase!Your order will be delivered to your location")
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // var placeorder = new Pizza(size, crust, toppings);
+    // Pizza.prototype.costOfPizza = function(){
+    //   if(this.size == "small" && this.crust=="crispy" && this.toppings == "Chicken" || "Hawaiian" || "Pepporoni" || "Borewores" || "Vegeterian"){
+    //     this.price +=200;
+    //   }else if (this.size == "small" && this.crust == "stuffed" && this.toppings == "Chicken" || "Hawaiian" || "Pepporoni" || "Borewores" || "Vegeterian"){
+    //     this.price += 250;
+    //   }else if (this.size == "small" && this.crust == "glutenFree" && this.toppings == "Chicken" || "Hawaiian"|| "Pepperoni" || "Borewores" ||"Vegeterian"){
+    //     this.price += 350;
+    //   }
+    //   if (this.size == "medium" && this.crust == "crispy" && this.toppings == "Chicken" || "Hawaiian" || "Pepperoni" || "Borewores" || "Vegeterian"){
+    //     this.price += 300;
+    //   }else if (this.size == "medium" && this.crust == "stuffed" && this.toppings == "Chicken" || "Hawaiian" || "Pepperoni" || "Borewores" || "Vegeterian") {
+    //     this.price += 350;
+    //   }else if (this.size == "medium" && this.crust == "glutenFree" && this.toppings == "Chicken" || "Hawaiian" ||"Pepperoni" ||"Borewores" || "Vegetation"){
+    //     this.price += 450;
+    //   }
+    //   if(this.size == "large" && this.crust == "crispy" && this.toppings == "chicken" || "Hawaiian" || "Borewores" || "Pepperoni"){
+    //     this.price += 400;
+    //   }else if (this.size == "large" && this.crust == "stuffed" && this.toppings == "chicken" || "Hawaiian" || "Borewores" || "Pepperoni"){
+    //     this.price += 450;
+    //   }else if (this.size == "large" && this.crust == "glutenFree" && this.toppings == "chicken" || "Hawaiian" || "Borewores" || "Pepperoni"){
+    //     this.price += 550;
+    //   }
+    // };
+    // alert(placeorder.costOfPizza())
     // } return this.price;
     // alert('something')
-})
-// Pizza.prototype.costOfPizza = function() {
-//   if (this.size === small) {
-//     this.price += 100;
-//   } else if (this.size === medium) {
-//     this.price += 200;
-//   } else if (this.size === large) {
-//     this.price += 300;
-//   }
-//   if (this.crust === crispy) {
-//     this.price += 50;
-//   } else if (this.crust === stuffed) {
-//     this.price += 100;
-//   } else if (this.crust === glutenFree) {
-//     this.price += 200;
-//   }
-//   if (this.toppings === Chicken) {
-//     this.price += 50;
-//   } else if (this.toppings === Hawaiian) {
-//     this.price += 50;
-//   } else if (this.toppings === Borewores) {
-//     this.price += 50;
-//   } else if (this.toppings === Pepperoni) {
-//     this.price += 50;
-//   } else if (this.toppings === Vegeterian) {
-//     this.price += 50;
-//   }
-//   return this.price;
-// };
+// })
+
 
 // placeorder.prototype.deliveryCost = function() {
 //   return this.deliveryFee;

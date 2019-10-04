@@ -1,6 +1,44 @@
+.jumbotron {
+    background-color: red;
+    color: aliceblue;
+}
+
 #footer {
     align-self: center;
     padding-left: 500px;
     padding-top: 20px;
-    
+}
+
+.pick {
+    align-self: center;
+    padding-top: 20px;
+    background-color: red;
+}
+
+#textPrice {
+    border: 2px solid yellow;
+    text-align: center;
+    width: 45%;
+
+}
+
+.totalOrderprice {
+    padding-top: 10px;
+}
+
+hr {
+    width: 20%;
+}
+
+.sect-4 {
+    margin-left: 25%;
+    margin-top: 5%;
+}
+
+#card2 {
+    height: 60vh;
+}
+
+body {
+    background-color: yellow;
 }
