@@ -1,44 +1,54 @@
 .jumbotron {
-    background-color: red;
-    color: aliceblue;
+  background-color: red;
+  color: aliceblue;
+  border: solid 5px;
+  border-color: aliceblue;
 }
 
 #footer {
-    align-self: center;
-    padding-left: 500px;
-    padding-top: 20px;
+  align-self: center;
+  padding-left: 500px;
+  padding-top: 20px;
 }
 
 .pick {
-    align-self: center;
-    padding-top: 20px;
-    background-color: red;
+  align-self: center;
+  padding-top: 20px;
+  background-color: red;
+  border: solid 5px;
+  border-color: aliceblue;
 }
 
 #textPrice {
-    border: 2px solid yellow;
-    text-align: center;
-    width: 45%;
-
+  border: 2px solid yellow;
+  text-align: center;
+  width: 45%;
 }
 
 .totalOrderprice {
-    padding-top: 10px;
+  padding-top: 10px;
 }
 
 hr {
-    width: 20%;
+  width: 20%;
 }
 
 .sect-4 {
-    margin-left: 25%;
-    margin-top: 5%;
+  margin-left: 25%;
+  margin-top: 5%;
 }
 
 #card2 {
-    height: 60vh;
+  height: 60vh;
 }
 
 body {
-    background-color: yellow;
+  background-color: yellow;
+}
+
+.card1{
+    background-color: black;
+    color: aliceblue;
+    border: solid 5px;
+    border-color:aliceblue;
 }
