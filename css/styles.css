@@ -39,16 +39,19 @@ hr {
 }
 
 #card2 {
-  height: 60vh;
+  height: 65vh;
+  background-image: url(/images/p3.jpg);
+  border: solid 5px;
+  border-color: black;
 }
 
 body {
   background-color: yellow;
 }
 
-.card1{
-    background-color: black;
-    color: aliceblue;
-    border: solid 5px;
-    border-color:aliceblue;
+.card1 {
+  background-color: black;
+  color: aliceblue;
+  border: solid 5px;
+  border-color: aliceblue;
 }
