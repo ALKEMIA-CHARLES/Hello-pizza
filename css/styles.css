@@ -55,3 +55,12 @@ body {
   border: solid 5px;
   border-color: aliceblue;
 }
+
+#exampleModal {
+  background-image: url("../images/p3.jpg")
+}
+
+.modal-content {
+  background-color: black;
+  color: white;
+}

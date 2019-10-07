@@ -8,6 +8,9 @@ Hello Pizza is an interactive pizza selling platform that caters for orders cust
 
 The technologies used in this project are HTML, CSS, JavaScript and Jquery.  HTML was used to work on the organization of the site in term of how the site looked, CSS was used to style it. JavaSript and Jquery were used to referenece the objects and constructors. 
 
+Bugs:
+found it diffcilut to likbk delivery link to function that can be called on JS. I instead decided to link everything on JS.
+
 contact: charlesmtawaliJr@gmail.com
 
 license information: All rights reserved

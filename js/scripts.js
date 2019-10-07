@@ -99,12 +99,7 @@ $(document).ready(function () {
     $("#tc").text(newOrder.price);
 
   })
-})
 
-$(document).ready(function () {
-  $("#delivery").click(function () {
-    var x = prompt("Where would you like your delivery to be ?")
-    prompt("Please type in your phone number below so that we can call you once we reach" + " " + x)
-    alert("Thank you for Your Purchase ! Your order will be delivered to" + " " + x)
-  });
-});
+
+
+})
