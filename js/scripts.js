@@ -1,6 +1,3 @@
-// $('#ordersheet').submit(function(e){
-// e.preventDefault;
-
 var totalOrderprice = [];
 
 function pizza(size, crust, toppings) {
@@ -82,8 +79,6 @@ pizza.prototype.totalOrderprice = function () {
   return orderTotal;
 }
 
-
-
 var newOrder = new pizza();
 
 $(document).ready(function () {
@@ -95,10 +90,8 @@ $(document).ready(function () {
     newOrder.setCrust(crust);
     var toppings = $("select#toppingsSelect").val();
     newOrder.setToppings(toppings);
-    // var newOrder = new pizza(size, crust, toppings);
-    console.log(newOrder.costOfPizza())
 
-    // newOrder.totalOrderPrice.push(newOrder.price);
+    console.log(newOrder.costOfPizza())
 
     $("#pz").text(size);
     $("#cr").text(crust);
@@ -110,8 +103,8 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $("#delivery").click(function () {
-    // alert("Your charges for delivery is ksh200")
     var x = prompt("Where would you like your delivery to be ?")
-    alert("Thank you for Your Purchase!Your order will be delivered to" + " " + x)
+    prompt("Please type in your phone number below so that we can call you once we reach" + " " + x)
+    alert("Thank you for Your Purchase ! Your order will be delivered to" + " " + x)
   });
 });
