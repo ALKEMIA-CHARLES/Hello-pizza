@@ -26,7 +26,7 @@
 }
 
 .totalOrderprice {
-  padding-top: 10px;
+  padding-top: 15px;
 }
 
 hr {
@@ -63,4 +63,21 @@ body {
 .modal-content {
   background-color: black;
   color: white;
+}
+
+.btn1 {
+  background-color: black;
+  color: white;
+  border-radius: 55%;
+  border: solid 4px;
+  border-color: white;
+}
+
+.btn2 {
+  background-color: black;
+  border: solid 2px;
+  border-color: white;
+  color: white;
+  border-radius: 55%;
+
 }
