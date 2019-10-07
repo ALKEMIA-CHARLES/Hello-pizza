@@ -39,8 +39,8 @@ hr {
 }
 
 #card2 {
-  height: 65vh;
-  background-image: url(/images/p3.jpg);
+  height: 61vh;
+  background-image: url("../images/p3.jpg");
   border: solid 5px;
   border-color: black;
 }
